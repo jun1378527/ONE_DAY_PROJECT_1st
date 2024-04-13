@@ -11,7 +11,7 @@ The ONE_DAY_PROJECT_1st is designed to challenge our team to deliver a fully fun
 - jun1378527
 - shugaroon
 - ui11111
-- sim bi gyeong
+- simqlrud
 
 ## Technologies Used
 
