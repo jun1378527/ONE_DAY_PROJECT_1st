@@ -59,14 +59,14 @@ nav a, .sub-nav a {
 }
 .top-brand-section {
     margin: 20px 0;
-    background-color: lightgray;
+    background-color: white;
 }
 .top-brand-title {
     text-align: left;
     padding: 20px 0;
     font-size: 24px;
     color: black;
-    background-color: lightgray; 
+    background-color: white; 
     margin-bottom: 10px; 
 }
 
@@ -75,27 +75,33 @@ nav a, .sub-nav a {
     grid-template-columns: repeat(7, 1fr); 
     gap: 20px;
     padding: 10px 20px; 
-    background-color: lightgray; 
+    background-color: white; 
     margin: 20px 0;
 }
 
 .top-brand a {
     height: 100px;
-    text-align: center; 
-    padding: 10px; 
-    background-color: white; 
-    border: 1px solid black;
+    width: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; 
-    color: black; 
-    font-size: 16px; 
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    overflow: hidden; 
+    border: 1px solid white; 
 }
 
+.top-brand img {
+    max-height: 100%; 
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
 .top-brand a:hover {
-    background-color: #f8f8f8; 
-    border-color: #888; 
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
 .product-grid {
