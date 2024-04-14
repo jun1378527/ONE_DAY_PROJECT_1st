@@ -15,7 +15,7 @@
         <header>
             <div class="logo">ODSP</div>
             <nav class="main-nav">
-                <a href="#">로그인</a>
+                <a href="#" id="loginButton">로그인</a>
                 <a href="#">주문확인</a>
                 <a href="#">장바구니</a>
                 <a href="#">검색</a>
@@ -133,6 +133,21 @@
             <p>© 2024-04-15 open. ODSD</p>
         </footer>
     </div>
+    <div id="loginModal" class="login-modal">
+        <div class="login-content">
+            <span class="close">&times;</span>
+            <h2>로그인</h2>
+            <form action="/submit-your-login" method="post">
+                <label for="username">아이디:</label>
+                <input type="text" id="username" name="username" required><br>
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required><br>
+                <button type="submit">로그인</button>
+                <button type="button" onclick="location.href='/register'">회원가입</button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
