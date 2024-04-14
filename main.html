@@ -7,8 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -16,7 +14,7 @@
     <div class="container">
         <header>
             <div class="logo">ODSP</div>
-            <nav>
+            <nav class="main-nav">
                 <a href="#">로그인</a>
                 <a href="#">주문확인</a>
                 <a href="#">장바구니</a>
@@ -25,23 +23,70 @@
             </nav>
         </header>
         <div class="sub-nav">
-            <a href="#">전체보기</a>
-            <a href="#">베스트셀러</a>
-            <a href="#">SALE</a>
-            <a href="#">신상품</a>
-            <a href="#">커뮤니티</a>
+            <div class="header-nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">상품 전체보기</a>
+                    <div >
+                        <ul class="side-menu">
+                            <li><a href="#">아우터</a></li>
+                            <li><a href="#">상의</a></li>
+                            <li><a href="#">하의</a></li>
+                            <li><a href="#">신발</a></li>
+                            <li><a href="#">가방&악세서리</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="nav-link">트렌드</a>
+                    <div >
+                        <ul class="side-menu">
+                            <li><a href="#">2024 트렌드</a></li>
+                            <li><a href="#">2024 베스트 셀러</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="nav-link">SALE</a>
+                    <div >
+                        <ul class="side-menu">
+                            <li><a href="#">오픈런 딜</a></li>
+                            <li><a href="#">4월 핫딜</a> </li>
+                            <li><a href="#">기획전</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="nav-link">업데이트</a>
+                    <div >
+                        <ul class="side-menu">
+                            <li><a href="#">신상품</a></li>
+                            <li><a href="#">재입고 알림</a></li>
+                            <li><a href="#">이달의 이벤트 캘린더</a></li>
+                            <li><a href="#">입점 소식</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="nav-link">커뮤니티</a>
+                    <div >
+                        <ul class="side-menu">
+                            <li> <a href="#">옷장 구경</a></li>
+                            <li><a href="#">고객의 소리</a></li>
+                            <li><a href="#">인스타/sns 이벤트</a></li>
+                            <li>Q&A</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="banner">
-            <div class="carousel" id="carousel">
-                
-            </div>
+            <div class="carousel" id="carousel"></div>
             <div class="carousel-controls">
                 <button class="btn" id="btn1"></button>
                 <button class="btn" id="btn2"></button>
                 <button class="btn" id="btn3"></button>
                 <button class="btn" id="btn4"></button>
-                <button class="btn" id="btn5"></button>
-                <button class="btn" id="btn6"></button>
             </div>
         </div>
         <main>

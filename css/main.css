@@ -8,9 +8,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f8f8;
+    background-color:white;
     padding: 10px 50px;
+    width : 100vw;
+    position : fixed;
 }
+ul{
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container{
     width: 100%;
     max-width: 1920px;
@@ -18,24 +27,57 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
+.main-nav {
+    margin-right:90px;
+}
+
 .logo {
     font-size: 24px;
 }
 
-nav a, .sub-nav a {
+nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: black;
+    color: rgb(115, 109, 109);
+}
+.sub-nav a{
+    text-decoration: none;
+    color: rgb(9, 9, 9);
 }
 
 .sub-nav {
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    background-color: gray;
     margin-bottom: 10px;
+    margin-top:47.74px;
+    list-style: none;
+}
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    animation: delay1s 0.25s 1; animation-direction: alternate;
+    animation: delay1s 1s 1; animation-direction: alternate; 
+}
+.header-nav  div {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
+.side-menu{
+    list-style: none;
+    position: absolute;
+    display: none;
+    animation: delay1s 0.25s 1; animation-direction: alternate;
+    background-color: rgba(250, 235, 215, 0);
+}
+.header-nav > div:hover .side-menu {
+    display: flex; 
+}
 .banner {
     width: 100%;
     display: flex;
@@ -43,35 +85,69 @@ nav a, .sub-nav a {
     align-items: center; 
     background-color: gray;
     position: relative; 
+    height: 500px;
 }
 
 .carousel {
+    position: relative;
     width: 100%;
-    height: 300px; 
+    height: 500px; 
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%; 
+    text-align: center; 
     display: flex;
     justify-content: center;
-    width: 100%; 
-    padding: 10px;
-    margin-top: 10px; 
 }
 
 .btn {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     margin: 2px;
-    background-color: white;
+    background-color: rgba(165, 165, 165, 0.4);
     border-radius: 50%;
+    display: inline-block;
+    border: none;
+}
+.bg-gradient-1 {
+    background: linear-gradient(
+        to right, 
+        rgb(250, 120, 150, 1) 15%, 
+        rgb(255, 195, 195, 1) 20%, 
+        rgb(255, 195, 195, 1) 80%, 
+        rgb(250, 120, 150, 1) 85%
+    );
+}
+
+.bg-gradient-2 {
+    background: linear-gradient(
+        to right, 
+        rgb(250, 120, 150, 1) 15%, 
+        rgb(254, 166, 167, 1) 20%, 
+        rgb(254, 166, 167, 1) 80%, 
+        rgb(250, 120, 150, 1) 85%
+    );
+}
+
+.bg-gradient-3 {
+    background: linear-gradient(
+        to right, 
+        rgb(255, 230, 220, 1) 15%, 
+        #ffffff 40%, 
+        #ffffff 60%, 
+        rgb(255, 230, 220, 1) 85%
+    );
 }
 
 .btn.active, .btn:hover {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .top-brand-section {
@@ -154,4 +230,8 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: gray;
+}
+@keyframes delay1s {
+    0% {opacity: 0; transform: translate3d(0, -50px, 0)}
+    100% {opacity: 1; transform: none}
 }

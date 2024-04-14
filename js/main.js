@@ -1,22 +1,18 @@
 const carousel = document.querySelector(".carousel");
+const banner = document.querySelector(".banner");
 const btns = document.querySelectorAll(".btn");
-const pics = [
-  "img/supreme_margiela_T-shirts1.png",
-  "img/supreme_margiela_T-shirts2.png",
-  "img/chromehearts_lgmambk.jpg",
-  "img/palace_gap_jacket1.png",
-  "img/gentlemonster_margiela_sunglass1.png",
-  "img/gentlemonster_margiela_sunglass2.png",
-];
-
-// carousel의 초기 이미지와 버튼색 초기값 설정
+const pics = ["img/event1.png", "img/event2.png", "img/event3.png"];
+const gradients = ["bg-gradient-1", "bg-gradient-2", "bg-gradient-3"];
 let selected = 0;
 
 carousel.style.backgroundImage = `url(${pics[selected]})`;
+banner.classList.add(gradients[selected]);
+btns[selected].classList.add("active");
 
 btns.forEach((btn, index) => {
   btn.onclick = function () {
     carousel.style.backgroundImage = `url(${pics[index]})`;
+    banner.className = "banner " + gradients[index];
     btns[selected].classList.remove("active");
     btn.classList.add("active");
     selected = index;
@@ -27,5 +23,6 @@ setInterval(() => {
   btns[selected].classList.remove("active");
   selected = (selected + 1) % pics.length;
   carousel.style.backgroundImage = `url(${pics[selected]})`;
+  banner.className = "banner " + gradients[selected];
   btns[selected].classList.add("active");
 }, 5000);
