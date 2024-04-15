@@ -71,6 +71,10 @@ nav a {
 .sub-nav a:hover {
     color: rgb(185, 171, 199);
 }
+.nav-link{
+    font-size: 24px;
+    font-weight: 800;
+}
 
 .nav-link:hover + .side-menu,
 .side-menu:hover {
@@ -97,6 +101,8 @@ nav a {
 }
 
 .side-menu{
+    font-size: 18px;
+    font-weight: 400;
     padding: 10px;
     list-style: none;
     position: absolute;
@@ -422,4 +428,16 @@ button[type="button"]:hover {
 }
 #perfumes, #glasses, #hot-items {
     scroll-margin-top: 200px;
+}
+.product-info>p:nth-child(2){
+    font-size: 14px;
+    font-weight: 100;
+}
+.product-info>p:nth-child(3){
+    font-size: 18px;
+    font-weight: 400;
+}
+#product-name{
+    font-size: 24px;
+    font-weight: 800;
 }
