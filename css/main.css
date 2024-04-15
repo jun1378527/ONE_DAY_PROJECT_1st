@@ -4,13 +4,16 @@ body {
     font-weight: 500;
 }
 header {
+    flex-direction: row;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color:white;
-    padding: 10px 50px;
+    padding: 10px 20px;
     width : 100vw;
     position : fixed;
+    z-index: 1000;
+    height: 80px;
 }
 ul{
     padding: 0px;
@@ -28,12 +31,14 @@ ul{
 }
 .main-nav {
     margin-right:90px;
+    margin-bottom: 10px;
 }
 
 .logo img{
     display: block;
     margin: 0 auto;
     height: 40px;
+    margin-bottom: 10px;
 }
 
 nav a {
@@ -45,6 +50,19 @@ nav a {
 .nav-item{
     position: relative;
 }
+
+.sub-nav {
+    position: fixed;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    list-style: none;
+    z-index: 1000;
+    width: 100%;
+    flex-wrap: wrap;
+}
 .sub-nav a{
     text-decoration: none;
     color: rgb(101, 77, 114);
@@ -54,27 +72,23 @@ nav a {
     color: rgb(185, 171, 199);
 }
 
-.sub-nav {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    margin-bottom: 10px;
-    margin-top:47.74px;
-    list-style: none;
-}
 .nav-link:hover + .side-menu,
 .side-menu:hover {
     display: block;
 }
 
 .header-nav {
+    margin-left: 20px;
+    margin-right: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     animation: delay1s 0.25s 1; animation-direction: alternate;
     animation: delay1s 1s 1; animation-direction: alternate; 
 }
 .header-nav  div {
-    width: 250px;
+    min-width: 120px;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -83,15 +97,16 @@ nav a {
 }
 
 .side-menu{
+    padding: 10px;
     list-style: none;
     position: absolute;
     display: none;
     animation: delay1s 0.25s 1; animation-direction: alternate;
-    background-color: rgba(250, 235, 215, 0);
-    
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .banner {
+    margin-top:110px;
     width: 100%;
     display: flex;
     flex-direction: column; 
@@ -167,81 +182,104 @@ nav a {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.top-brand-section {
-    margin: 20px 0;
-    background-color: white;
-}
-.top-brand-title {
-    text-align: left;
-    padding: 20px 0;
-    font-size: 24px;
-    color: black;
-    background-color: white; 
-    margin-bottom: 10px; 
-}
-
-.top-brand {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); 
-    gap: 20px;
-    padding: 10px 20px; 
-    background-color: white; 
-    margin: 20px 0;
-}
-
-.top-brand a {
-    height: 100px;
-    width: 100%; 
+.product-grid1 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    overflow: hidden; 
-    border: 1px solid white; 
-}
-
-.top-brand img {
-    max-height: 100%; 
-    max-width: 100%;
-    object-fit: contain;
-}
-
-
-.top-brand a:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .product-grid2 {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-grid3 {
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .product-card {
-    height: 250px;
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    border: 1px solid #a0a0a0;
+    border-radius: 25px;
+    box-shadow: 10px 15px 10px #a0a0a0;
+    background-color: rgb(255, 255, 255);
 }
 
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card .product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-card:hover .product-info {
+    transform: translateY(0);
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
 .product-card2 {
-    height: 350px;
-    background-color: gray;
+    height: 200px; 
+    width: 200px;
+    background-color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 15px; 
+    border-radius: 15px; 
+    box-shadow: 5px 7px 5px #ccc; 
+    overflow: hidden; 
+    position: relative;
+}
+
+.product-card2 img {
+    max-width: 80%; 
+    max-height: 80%;
+    height: auto; 
+    transition: transform 0.3s ease;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.product-card2:hover img {
+    transform: translate(-50%, -50%) scale(1.05); 
+}
+
+h2{
+    margin-left: 20px;
 }
 footer {
     background-color: white;
@@ -381,4 +419,7 @@ button[type="button"]:hover {
 @keyframes delay1s {
     0% {opacity: 0; transform: translate3d(0, -50px, 0)}
     100% {opacity: 1; transform: none}
+}
+#perfumes, #glasses, #hot-items {
+    scroll-margin-top: 200px;
 }
