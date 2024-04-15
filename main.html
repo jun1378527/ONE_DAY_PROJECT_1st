@@ -303,7 +303,7 @@
     </div>
     <div id="loginModal" class="login-modal">
         <div class="login-content">
-            <span class="close">&times;</span>
+            <span class="close" style="display: none;">&times;</span>
             <h2>로그인</h2>
             <form action="/submit-your-login" method="post">
                 <label for="username">아이디:</label>
@@ -316,13 +316,51 @@
                 <span class="keep-txt">로그인 상태 유지</span>
                 <div class="log-button">
                 <button type="submit">로그인</button>
-                <button type="button" onclick="location.href='/register'">회원가입</button>
+                <button type="button" id="signUpbtn" location.ref="/register">회원가입</button>
                 </div>
+
+
                 <div class="log-password">
                     <a href="#">아이디 or 비밀번호를 잊으셨나요?</a>
                     <p> 다른 로그인 방법 </p>
+                </div>
             </form>
         </div>
+            <div id="signUpModal" class="signUp-modal">
+                <div class="signUp-content">
+                <span class="close2" style="display: none;">&times;</span>
+                <h2>회원가입</h2>
+            <form action="/submit-your-register" method="post">
+                <label for="username">아이디:</label> 
+                <input type="text" id="username" name="username" maxlength="15" required><br>
+            <!-- // ID 중복확인은 db 참조해서 구현하기 like kream //  -->
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" maxlength="12" required><br>
+                <label for="password2">비밀번호 확인:</label>
+                <input type="password" id="password2" name="password" maxlength="12" required><br>
+            
+                <label for="referee-cord">추천인:</label>
+                <input type="text" id="referee-cord" name="referee-cord" maxlength="15" placeholder="입력시 5000포인트 지급"><br>
+
+                <label for="agree-statement">[필수] 만 14세 이상이며 모두 동의합니다.</label>
+                <input type="checkbox" id="agree-statement" name="agree-statement" required><br>
+
+                <label for="agree-statement">[선택] 광고성 정보 수신에 모두 동의합니다. </label>
+                <input type="checkbox" id="agree-statement" name="agree-statement"><br>
+                
+                <div id="loginBtn-container">
+                    <input type="button" class="login-btn" id="naver-login" name="naver-login" value="네이버로 로그인">
+                    <input type="button" class="login-btn" id="kakao-login" name="kakao-login" value="카카오로 로그인">
+                    <input type="button" class="login-btn" id="apple-login" name="apple-login" value="Apple로 로그인">
+                </div>
+            
+
+
+                <button type="button" id="signUpbtn2" location.ref="/register">회원가입하기</button>
+
+            </form>
+                </div>
+            </div>
     </div>
 
     <script src="js/main.js"></script>

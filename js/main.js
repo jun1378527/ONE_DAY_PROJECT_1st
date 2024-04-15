@@ -42,14 +42,22 @@ document
   .addEventListener("click", function (event) {
     event.preventDefault();
     document.getElementById("loginModal").style.display = "block";
+    document.getElementById("signUpModal").style.display = "none";
   });
 
 document.querySelector(".close").addEventListener("click", function () {
   document.getElementById("loginModal").style.display = "none";
 });
-
+document.querySelector(".close2").addEventListener("click", function () {
+  document.getElementById("signUpModal").style.display = "none";
+});
+document.getElementById("signUpbtn").addEventListener("click", function () {
+  document.getElementById("signUpModal").style.display = "block";
+});
 window.onclick = function (event) {
   if (event.target == document.getElementById("loginModal")) {
     document.getElementById("loginModal").style.display = "none";
+  } else if (event.target == document.getElementById("signUpModal")) {
+    document.getElementById("signUpModal").style.display = "none";
   }
 };
