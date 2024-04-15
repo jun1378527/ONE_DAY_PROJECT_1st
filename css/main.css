@@ -39,11 +39,19 @@ ul{
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: rgb(115, 109, 109);
+    color: rgba(138, 134, 134, 0.477);
+    font-size: 12px;
+}
+.nav-item{
+    position: relative;
 }
 .sub-nav a{
     text-decoration: none;
-    color: rgb(9, 9, 9);
+    color: rgb(101, 77, 114);
+    font-size: 15px;
+}
+.sub-nav a:hover {
+    color: rgb(185, 171, 199);
 }
 
 .sub-nav {
@@ -54,6 +62,11 @@ nav a {
     margin-top:47.74px;
     list-style: none;
 }
+.nav-link:hover + .side-menu,
+.side-menu:hover {
+    display: block;
+}
+
 .header-nav {
     display: flex;
     flex-direction: row;
@@ -75,10 +88,9 @@ nav a {
     display: none;
     animation: delay1s 0.25s 1; animation-direction: alternate;
     background-color: rgba(250, 235, 215, 0);
+    
 }
-.header-nav > div:hover .side-menu {
-    display: flex; 
-}
+
 .banner {
     width: 100%;
     display: flex;
