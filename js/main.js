@@ -1,39 +1,59 @@
 const carousel = document.querySelector(".carousel");
-       
-const pics = [
-    "img/supreme_margiela_T-shirts1.png",
-    "img/supreme_margiela_T-shirts2.png",
-    "img/chromehearts_lgmambk.jpg",
-    "img/palace_gap_jacket1.png",
-    "img/gentlemonster_margiela_sunglass1.png",
-    "img/gentlemonster_margiela_sunglass2.png",
-    "img/nike_sb_dunk_low_chicago.png",
-    "img/CHANEL_ALLURE.jpg"
-]
-
-
-// carousel의 초기 이미지와 버튼색 초기값 설정
+const banner = document.querySelector(".banner");
+const btns = document.querySelectorAll(".btn");
+const pics = ["img/event1.png", "img/event2.png", "img/event3.png"];
+const gradients = ["bg-gradient-1", "bg-gradient-2", "bg-gradient-3"];
 let selected = 0;
 
 carousel.style.backgroundImage = `url(${pics[selected]})`;
-carousel.style.backgroundRepeat = "no-repeat";
+banner.classList.add(gradients[selected]);
+btns[selected].classList.add("active");
 
-const btns = document.querySelectorAll(".btn");
-btns[selected].style.backgroundColor = "black";
-
-for (let i = 0 ; i < pics.length; i++) {
-    btns[i].onclick = () => {
-        btns[selected].style.backgroundColor = "white";
-        carousel.style.backgroundImage = `url(${pics[i]})`;
-        btns[i].style.backgroundColor = "black";
-        selected = i;  
-    }
-}
+btns.forEach((btn, index) => {
+  btn.onclick = function () {
+    carousel.style.backgroundImage = `url(${pics[index]})`;
+    banner.className = "banner " + gradients[index];
+    btns[selected].classList.remove("active");
+    btn.classList.add("active");
+    selected = index;
+  };
+});
 
 setInterval(() => {
-    btns[selected].style.backgroundColor = "white"; // 값을 증가시키기 전에 이전에 활성화되었던 버튼색을 초기화
-    selected++; 
-    if(selected >= pics.length) selected = 0; // 현재 증가된 값이 pics의 length보다 크다면 다시 0으로 초기화
-    carousel.style.backgroundImage = `url(${pics[selected]})`;
-    btns[selected].style.backgroundColor = "black"; 
-}, 5000); 
+  btns[selected].classList.remove("active");
+  selected = (selected + 1) % pics.length;
+  carousel.style.backgroundImage = `url(${pics[selected]})`;
+  banner.className = "banner " + gradients[selected];
+  btns[selected].classList.add("active");
+}, 7000);
+
+document
+  .getElementById("loginButton")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("loginModal").style.display = "block";
+    document.getElementById("signUpModal").style.display = "none";
+  });
+
+document.querySelector(".close").addEventListener("click", function () {
+  document.getElementById("loginModal").style.display = "none";
+});
+
+document.querySelector(".close2").addEventListener("click", function () {
+  document.getElementById("signUpModal").style.display = "none";
+}); 
+  
+
+document.getElementById("signUpbtn").addEventListener("click", function(){
+  document.getElementById("signUpModal").style.display = "block";
+});
+
+
+window.onclick = function (event) {
+  if (event.target == document.getElementById("loginModal")) {
+    document.getElementById("loginModal").style.display = "none";
+  }else if(event.target == document.getElementById("signUpModal")){
+    document.getElementById("signUpModal").style.display = "none";      
+  }
+}; 
+
