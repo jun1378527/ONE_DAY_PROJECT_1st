@@ -1,8 +1,18 @@
 const carousel = document.querySelector(".carousel");
 const banner = document.querySelector(".banner");
 const btns = document.querySelectorAll(".btn");
-const pics = ["img/event1.png", "img/event2.png", "img/event3.png"];
-const gradients = ["bg-gradient-1", "bg-gradient-2", "bg-gradient-3"];
+const pics = [
+  "img/event1.png",
+  "img/event2.png",
+  "img/event3.png",
+  "img/event4.png",
+];
+const gradients = [
+  "bg-gradient-1",
+  "bg-gradient-2",
+  "bg-gradient-3",
+  "bg-gradient-4",
+];
 let selected = 0;
 
 carousel.style.backgroundImage = `url(${pics[selected]})`;
