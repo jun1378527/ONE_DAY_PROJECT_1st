@@ -354,7 +354,8 @@ footer .company {
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #ccc;
-    width: 40%;
+    width: 45%;
+    height: 80%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -381,15 +382,15 @@ h2 {
 input[type="text"],
 input[type="password"] {
     width: calc(100% - 20px);
-    padding: 10px;
+    padding: 8px;
     margin-top: 8px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ded9d9;
     border-radius: 4px;
 }
 
 button[type="submit"] {
-    background-image: linear-gradient(to right, #ff416c 0%, #ff4b2b 100%); 
+    background-image: linear-gradient(to right, #f1b4ee 0%, #8b8fea 100%); 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -406,21 +407,66 @@ button[type="submit"]:hover {
 
 
 button[type="button"] {
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); 
+    background-image: linear-gradient(to right, #c8b1e0 0%, #93b7da 100%); 
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    margin-top: 10px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+div.log-button{
+    width: 200px;
+    margin-left: 122px;
+    margin-top: 20px;
+   }
+.keep-txt{
+    font-size: 12px;
+    margin-right: 90px;
 }
 
 button[type="button"]:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
+.log-password{
+    height: 20px;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    display: contents;
+}
+
+.log-password > a{
+    text-decoration:none;
+    color: #6f6b6b;
+    margin-left: 137px;
+}
+
+.log-password > p{
+    width: 97px;
+    margin-top:40px;
+    margin-left:154px ;
+    color: #8b8fea;
+}
+.out-log{
+    margin-left:158px ;
+    margin-top: 50px;
+}
+.out-log a{
+text-decoration: none;
+}
+.out-log div{
+    border-radius: 30%}
+    
+
+
+
+
+
+
 
 @keyframes delay1s {
     0% {opacity: 0; transform: translate3d(0, -50px, 0)}
